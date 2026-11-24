@@ -1,0 +1,144 @@
+--BUSCA POR DATA
+SELECT nome FROM produto WHERE
+cadastrado_em = '2026-01-15';
+
+--BUSCA POR NULL
+SELECT nome FROM produto WHERE
+preco_proporcional IS NULL;
+
+-- BUSCA QUATRO PRODUTOS COM PREÇO PROMOCIONAL PREENCHIDO
+SELECT nome FROM produto WHERE preco_promocional
+IS NOT NULL;
+
+-- SELECIONA TRÊS PREÇOS PROMOCIONAIS DIFERENTES DE 1.99
+SELECT nome FROM produto WHERE preco_promo,cional
+<> 1.99;
+
+---
+SELECT nome FROM produto WHERE preco promocinal
+NOT IN (1.99,7.90,NULL ); 
+
+SELECT nome FROM produto WHERE preco promocinal
+NOT IN (1.99,7.90,NULL ); 
+
+-- ORDER BY
+-- ORDENA PELO PRECO EM ORDEM CRESCENTE,POR PADRÃO SE NÃO DEFINIDO SEMPRE SERÁ ASC.
+SELECT nome,preco FROM produto ORDER BY preco;
+SELECT nome, preco FROM produto ORDER BY preco
+ASC;
+-- BUSCA NOME, PRECO E ORDEM EM ORDEM DECRESCENTE PRELO PREÇO
+SELECT nome,preco FROM produto ORDER BY preco DESC;
+
+
+
+
+ATIVIDADES 
+
+1-
+
+SELECT COUNT(DISTINCT setor) AS total_setores
+FROM artigo;
+
+
+-- EXERCÍCIO 2: 
+
+SELECT descricao, valor
+FROM artigo
+WHERE disponivel = TRUE AND valor > 50.00
+ORDER BY valor DESC;
+
+-- EXERCÍCIO 3:
+
+SELECT descricao
+FROM artigo
+WHERE disponivel = TRUE AND quantidade = 0;
+
+
+-- EXERCÍCIO 4: 
+
+SELECT descricao, setor
+FROM artigo
+WHERE setor IN ('futebol', 'tênis')
+ORDER BY descricao ASC;
+
+
+-- EXERCÍCIO 5: 
+
+SELECT descricao, quantidade
+FROM artigo
+WHERE quantidade BETWEEN 10 AND 50
+ORDER BY quantidade DESC;
+
+-- EXERCÍCIO 6
+
+FROM artigo
+WHERE descricao LIKE '_o%';
+
+-- EXERCÍCIO 7: 
+
+
+SELECT *
+FROM artigo
+WHERE descricao NOT LIKE '%o%';
+
+
+-- EXERCÍCIO 8: 
+
+SELECT descricao, data_cadastro
+FROM artigo
+WHERE data_cadastro >= '2026-02-01' AND data_cadastro < '2026-03-01';
+
+-- EXERCÍCIO 9: 
+
+SELECT descricao, data_cadastro
+FROM artigo
+WHERE YEAR(data_cadastro) = 2026 AND MONTH(data_cadastro) = 8;
+
+--- EXERCÍCIO 10-- 
+
+SELECT descricao, data_cadastro FROM artigo
+WHERE data_cadastro BETWEEN '2026-02-01' AND '2026-02-28';
+
+SELECT descricao, data_cadastro FROM artigo
+WHERE data_cadastro >= '2026-02-01' AND data_cadastro < '2026-03-01';
+
+
+
+-- EXERCÍCIO 11: 
+
+SELECT descricao, setor, valor
+FROM artigo
+ORDER BY setor ASC, valor DESC;
+
+-- EXERCÍCIO 12: 
+
+
+SELECT descricao, quantidade
+FROM artigo
+WHERE setor = 'futebol' AND disponivel = TRUE AND quantidade > 0
+ORDER BY quantidade DESC;
+
+-- EXERCÍCIO 13:
+
+SELECT descricao, (valor * quantidade) AS total
+FROM artigo
+WHERE (valor * quantidade) > 3000.00
+ORDER BY total DESC;
+
+
+-- EXERCÍCIO 14: 
+
+SELECT descricao, valor
+FROM artigo
+WHERE descricao LIKE '%a%' AND valor BETWEEN 10.00 AND 100.00
+ORDER BY valor ASC;
+
+-- ============================================================================
+-- EXERCÍCIO 15:
+
+SELECT descricao, setor, data_cadastro
+FROM artigo
+WHERE setor IN ('tênis', 'academia')
+  AND YEAR(data_cadastro) = 2026
+ORDER BY data_cadastro ASC; 
+
