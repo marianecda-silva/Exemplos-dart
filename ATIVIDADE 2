@@ -1,0 +1,90 @@
+ 1. Função apresentar
+void apresentar() {
+  print("Olá, meu nome é João e estou aprendendo Flutter!"); // Substitua "João" pelo seu nome
+}
+
+// 2. Função saudar
+void saudar(String nome) {
+  print("Bom dia, $nome!");
+}
+
+// 3. Função dobro
+int dobro(int numero) {
+  return numero * 2;
+}
+
+// 4. Funções media e situacao
+double media(double n1, double n2) {
+  return (n1 + n2) / 2;
+}
+
+String situacao(double nota) {
+  if (nota >= 7) {
+    return "Aprovado";
+  } else {
+    return "Reprovado";
+  }
+}
+
+// 1. Função apresentar()
+void apresentar() {
+  print("Olá, meu nome é João e estou aprendendo Flutter!"); // Substitua "João" pelo seu nome
+}
+
+// 2. Função saudar(String nome)
+void saudar(String nome) {
+  print("Bom dia, $nome!");
+}
+
+// 3. Função int dobro(int numero)
+int dobro(int numero) {
+  return numero * 2;
+}
+
+// 4. Funções double media(double n1, double n2) e String situacao(double nota)
+double media(double n1, double n2) {
+  return (n1 + n2) / 2;
+}
+
+String situacao(double nota) {
+  if (nota >= 7) {
+    return "Aprovado";
+  } else {
+    return "Reprovado";
+  }
+}
+
+// 5. Desafio: int somarLista(List<int> numeros)
+int somarLista(List<int> numeros) {
+  int soma = 0;
+  for (int i = 0; i < numeros.length; i++) {
+    soma += numeros[i];
+  }
+  return soma;
+}
+
+void main() {
+  // Chamadas do Exercício 1
+  apresentar();
+  apresentar();
+  apresentar();
+
+  // Chamadas do Exercício 2
+  saudar("Kelly");
+  saudar("Pedro");
+  saudar("Letícia");
+
+  // Chamadas do Exercício 3
+  print(dobro(5));
+  print(dobro(21));
+
+  // Chamadas do Exercício 4
+  double nota1 = media(8, 6);
+  print("Média: $nota1 - Situação: ${situacao(nota1)}");
+
+  double nota2 = media(5, 6);
+  print("Média: $nota2 - Situação: ${situacao(nota2)}");
+
+  // Chamada do Exercício 5
+  print(somarLista([3, 7, 10]));
+}
